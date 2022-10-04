@@ -125,7 +125,7 @@
 						<div class="page-header mt-0 shadow p-3">
 							<ol class="breadcrumb mb-sm-0">
 								<li class="breadcrumb-item"><a href="#">Tables</a></li>
-								<li class="breadcrumb-item active" aria-current="page">Data Tables</li>
+								<li class="breadcrumb-item active" aria-current="page">Add New Vehicle</li>
 							</ol>
 							<div class="btn-group mb-0">
 								<a href="<?php echo base_url(); ?>/addNewCars">
@@ -137,7 +137,7 @@
 							<div class="col-md-12">
 								<div class="card shadow">
 									<div class="card-header">
-										<h2 class="mb-0">Data Table</h2>
+										<h2 class="mb-0">Add New Vehicle</h2>
 									</div>
 									<div class="card-body">
 										<div class="table-responsive">

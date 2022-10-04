@@ -54,3 +54,261 @@ in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
  7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Addcompanylist))
  8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 02:04:27 --> Undefined variable $services
+in FCPATH\modules\Admin\Views\pages\brands\addnewbrands.php on line 207.
+ 1 FCPATH\modules\Admin\Views\pages\brands\addnewbrands.php(207): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $services', 'FCPATH\\modules\\Admin\\Views\\pages\\brands\\addnewbrands.php', 207)
+ 2 SYSTEMPATH\View\View.php(213): include('FCPATH\\modules\\Admin\\Views\\pages\\brands\\addnewbrands.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Modules\\Admin\\Views\\pages\\brands\\addnewbrands', [], true)
+ 5 FCPATH\modules\Admin\Controllers\Brandslist.php(130): view('Modules\\Admin\\Views\\pages\\brands\\addnewbrands', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Brandslist->addNewBrands()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Brandslist))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-10-01 02:07:44 --> Unknown column 'role_id' in 'order clause'
+CRITICAL - 2022-10-01 02:07:44 --> Unknown column 'role_id' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `vehicle_type`
+ORDER BY `role_id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `vehicle_type`
+ORDER BY `role_id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `vehicle_type`
+ORDER BY `role_id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `vehicle_type`
+ORDER BY `role_id` DESC', [], false)
+ 5 SYSTEMPATH\Model.php(222): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+ 7 FCPATH\modules\Admin\Controllers\Brandslist.php(128): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Brandslist->addNewBrands()
+ 9 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Brandslist))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 02:08:02 --> Undefined array key "model_name"
+in FCPATH\modules\Admin\Views\pages\brands\addnewbrands.php on line 210.
+ 1 FCPATH\modules\Admin\Views\pages\brands\addnewbrands.php(210): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "model_name"', 'FCPATH\\modules\\Admin\\Views\\pages\\brands\\addnewbrands.php', 210)
+ 2 SYSTEMPATH\View\View.php(213): include('FCPATH\\modules\\Admin\\Views\\pages\\brands\\addnewbrands.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Modules\\Admin\\Views\\pages\\brands\\addnewbrands', [], true)
+ 5 FCPATH\modules\Admin\Controllers\Brandslist.php(134): view('Modules\\Admin\\Views\\pages\\brands\\addnewbrands', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Brandslist->addNewBrands()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Brandslist))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-10-01 02:33:52 --> Unknown column 'name' in 'field list'
+CRITICAL - 2022-10-01 02:33:52 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `brand` (`name`, `type`, `brand_name`) VALUES (\'pexels-anjana-c-674010.jpg\', \'image/jpeg\', \'testing for vehicle type\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `brand` (`name`, `type`, `brand_name`) VALUES (\'pexels-anjana-c-674010.jpg\', \'image/jpeg\', \'testing for vehicle type\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `brand` (`name`, `type`, `brand_name`) VALUES (\'pexels-anjana-c-674010.jpg\', \'image/jpeg\', \'testing for vehicle type\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO `brand` (`name`, `type`, `brand_name`) VALUES (:name:, :type:, :brand_name:)', [...], false)
+ 5 APPPATH\Models\Brands_Db.php(41): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 FCPATH\modules\Admin\Controllers\Brandslist.php(263): App\Models\Brands_Db->insert_data([...])
+ 7 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Brandslist->savebrands()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Brandslist))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-10-01 03:21:20 --> Unknown column 'image_type' in 'field list'
+CRITICAL - 2022-10-01 03:21:20 --> Unknown column 'image_type' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `brand` (`avatar`, `image_type`, `make_name`) VALUES (\'software-testing-internet-business-technology-concept-143071525.jpg\', \'image/jpeg\', \'testing for vehicle type\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `brand` (`avatar`, `image_type`, `make_name`) VALUES (\'software-testing-internet-business-technology-concept-143071525.jpg\', \'image/jpeg\', \'testing for vehicle type\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `brand` (`avatar`, `image_type`, `make_name`) VALUES (\'software-testing-internet-business-technology-concept-143071525.jpg\', \'image/jpeg\', \'testing for vehicle type\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO `brand` (`avatar`, `image_type`, `make_name`) VALUES (:avatar:, :image_type:, :make_name:)', [...], false)
+ 5 APPPATH\Models\Brands_Db.php(41): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 FCPATH\modules\Admin\Controllers\Brandslist.php(266): App\Models\Brands_Db->insert_data([...])
+ 7 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Brandslist->savebrands()
+ 8 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Brandslist))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 03:22:48 --> Undefined variable $vehicle_type
+in FCPATH\modules\Admin\Views\pages\brands\addnewbrands.php on line 207.
+ 1 FCPATH\modules\Admin\Views\pages\brands\addnewbrands.php(207): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vehicle_type', 'FCPATH\\modules\\Admin\\Views\\pages\\brands\\addnewbrands.php', 207)
+ 2 SYSTEMPATH\View\View.php(213): include('FCPATH\\modules\\Admin\\Views\\pages\\brands\\addnewbrands.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Modules\\Admin\\Views\\pages\\brands\\addnewbrands', [], true)
+ 5 FCPATH\modules\Admin\Controllers\Brandslist.php(379): view('Modules\\Admin\\Views\\pages\\brands\\addnewbrands', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Brandslist->brand_edit('65')
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Brandslist))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 03:23:01 --> Undefined variable $vehicle_type
+in FCPATH\modules\Admin\Views\pages\brands\addnewbrands.php on line 207.
+ 1 FCPATH\modules\Admin\Views\pages\brands\addnewbrands.php(207): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vehicle_type', 'FCPATH\\modules\\Admin\\Views\\pages\\brands\\addnewbrands.php', 207)
+ 2 SYSTEMPATH\View\View.php(213): include('FCPATH\\modules\\Admin\\Views\\pages\\brands\\addnewbrands.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Modules\\Admin\\Views\\pages\\brands\\addnewbrands', [], true)
+ 5 FCPATH\modules\Admin\Controllers\Brandslist.php(379): view('Modules\\Admin\\Views\\pages\\brands\\addnewbrands', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Brandslist->brand_edit('65')
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Brandslist))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 04:02:14 --> Undefined array key "name"
+in FCPATH\modules\Admin\Views\pages\frontend\brand1.php on line 162.
+ 1 FCPATH\modules\Admin\Views\pages\frontend\brand1.php(162): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'FCPATH\\modules\\Admin\\Views\\pages\\frontend\\brand1.php', 162)
+ 2 SYSTEMPATH\View\View.php(213): include('FCPATH\\modules\\Admin\\Views\\pages\\frontend\\brand1.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Modules\\Admin\\Views\\pages\\frontend\\brand1', [], true)
+ 5 FCPATH\modules\Admin\Controllers\Vehicleselect.php(41): view('Modules\\Admin\\Views\\pages\\frontend\\brand1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Vehicleselect->brands()
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Vehicleselect))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 04:33:12 --> Undefined variable $vehicle_type
+in FCPATH\modules\Admin\Views\pages\brands\addnewbrands.php on line 207.
+ 1 FCPATH\modules\Admin\Views\pages\brands\addnewbrands.php(207): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vehicle_type', 'FCPATH\\modules\\Admin\\Views\\pages\\brands\\addnewbrands.php', 207)
+ 2 SYSTEMPATH\View\View.php(213): include('FCPATH\\modules\\Admin\\Views\\pages\\brands\\addnewbrands.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Modules\\Admin\\Views\\pages\\brands\\addnewbrands', [], true)
+ 5 FCPATH\modules\Admin\Controllers\Brandslist.php(379): view('Modules\\Admin\\Views\\pages\\brands\\addnewbrands', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Brandslist->brand_edit('66')
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Brandslist))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 04:45:59 --> Undefined variable $vehicle_type
+in FCPATH\modules\Admin\Views\pages\brands\addnewbrands.php on line 207.
+ 1 FCPATH\modules\Admin\Views\pages\brands\addnewbrands.php(207): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vehicle_type', 'FCPATH\\modules\\Admin\\Views\\pages\\brands\\addnewbrands.php', 207)
+ 2 SYSTEMPATH\View\View.php(213): include('FCPATH\\modules\\Admin\\Views\\pages\\brands\\addnewbrands.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Modules\\Admin\\Views\\pages\\brands\\addnewbrands', [], true)
+ 5 FCPATH\modules\Admin\Controllers\Brandslist.php(379): view('Modules\\Admin\\Views\\pages\\brands\\addnewbrands', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Brandslist->brand_edit('66')
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Brandslist))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-10-01 05:59:17 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'GROUP_CONCAT(vehicle_type_id) as differentvehicles  FROM brand b LEFT JOIN br...' at line 1
+CRITICAL - 2022-10-01 05:59:17 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'GROUP_CONCAT(vehicle_type_id) as differentvehicles  FROM brand b LEFT JOIN br...' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT b.*, bv.vehicle_type_id  GROUP_CONCAT(vehicle_type_id) as differentvehicles  FROM brand b LEFT JOIN brand_vehicletype_link bv on b.id = bv.brand_id where b.id = 66', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT b.*, bv.vehicle_type_id  GROUP_CONCAT(vehicle_type_id) as differentvehicles  FROM brand b LEFT JOIN brand_vehicletype_link bv on b.id = bv.brand_id where b.id = 66')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT b.*, bv.vehicle_type_id  GROUP_CONCAT(vehicle_type_id) as differentvehicles  FROM brand b LEFT JOIN brand_vehicletype_link bv on b.id = bv.brand_id where b.id = 66')
+ 4 APPPATH\Models\Brands_Db.php(30): CodeIgniter\Database\BaseConnection->query('SELECT b.*, bv.vehicle_type_id  GROUP_CONCAT(vehicle_type_id) as differentvehicles  FROM brand b LEFT JOIN brand_vehicletype_link bv on b.id = bv.brand_id where b.id = 66')
+ 5 FCPATH\modules\Admin\Controllers\Brandslist.php(369): App\Models\Brands_Db->get_row('66')
+ 6 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Brandslist->brand_edit('66')
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Brandslist))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 06:01:54 --> Undefined variable $sql4
+in APPPATH\Models\Brands_Db.php on line 30.
+ 1 APPPATH\Models\Brands_Db.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sql4', 'APPPATH\\Models\\Brands_Db.php', 30)
+ 2 FCPATH\modules\Admin\Controllers\Brandslist.php(369): App\Models\Brands_Db->get_row('66')
+ 3 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Brandslist->brand_edit('66')
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Brandslist))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 06:02:24 --> Undefined variable $vehicle_type
+in FCPATH\modules\Admin\Views\pages\brands\addnewbrands.php on line 196.
+ 1 FCPATH\modules\Admin\Views\pages\brands\addnewbrands.php(196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $vehicle_type', 'FCPATH\\modules\\Admin\\Views\\pages\\brands\\addnewbrands.php', 196)
+ 2 SYSTEMPATH\View\View.php(213): include('FCPATH\\modules\\Admin\\Views\\pages\\brands\\addnewbrands.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Modules\\Admin\\Views\\pages\\brands\\addnewbrands', [], true)
+ 5 FCPATH\modules\Admin\Controllers\Brandslist.php(377): view('Modules\\Admin\\Views\\pages\\brands\\addnewbrands', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Brandslist->brand_edit('66')
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Brandslist))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 06:29:23 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 846.
+ 1 SYSTEMPATH\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(692): CodeIgniter\BaseModel->update(null, [])
+ 3 FCPATH\modules\Admin\Controllers\Brandslist.php(223): CodeIgniter\Model->update()
+ 4 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Brandslist->savebrands()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Brandslist))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 06:40:17 --> print_r() expects at least 1 argument, 0 given
+in FCPATH\modules\Admin\Controllers\Brandslist.php on line 181.
+ 1 FCPATH\modules\Admin\Controllers\Brandslist.php(181): print_r()
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Brandslist->savebrands()
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Brandslist))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 06:42:32 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 846.
+ 1 SYSTEMPATH\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(692): CodeIgniter\BaseModel->update(null, [])
+ 3 FCPATH\modules\Admin\Controllers\Brandslist.php(236): CodeIgniter\Model->update()
+ 4 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Brandslist->savebrands()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Brandslist))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 06:46:21 --> There is no data to update.
+in SYSTEMPATH\BaseModel.php on line 846.
+ 1 SYSTEMPATH\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(692): CodeIgniter\BaseModel->update(null, [])
+ 3 FCPATH\modules\Admin\Controllers\Brandslist.php(237): CodeIgniter\Model->update()
+ 4 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Brandslist->savebrands()
+ 5 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Brandslist))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 08:23:57 --> Undefined variable $sql4
+in APPPATH\Models\Brand_Vehicletype_link_Db.php on line 33.
+ 1 APPPATH\Models\Brand_Vehicletype_link_Db.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sql4', 'APPPATH\\Models\\Brand_Vehicletype_link_Db.php', 33)
+ 2 FCPATH\modules\Admin\Controllers\Vehicleselect.php(43): App\Models\Brand_Vehicletype_link_Db->get_brand_vehicle('54')
+ 3 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Vehicleselect->brands('54')
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Vehicleselect))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 09:02:51 --> Call to undefined function Modules\Admin\Controllers\array_flatten()
+in FCPATH\modules\Admin\Controllers\Vehicleselect.php on line 45.
+ 1 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Vehicleselect->brands('47')
+ 2 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Vehicleselect))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 09:08:24 --> Undefined array key "name"
+in FCPATH\modules\Admin\Views\pages\frontend\brand1.php on line 162.
+ 1 FCPATH\modules\Admin\Views\pages\frontend\brand1.php(162): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'FCPATH\\modules\\Admin\\Views\\pages\\frontend\\brand1.php', 162)
+ 2 SYSTEMPATH\View\View.php(213): include('FCPATH\\modules\\Admin\\Views\\pages\\frontend\\brand1.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('Modules\\Admin\\Views\\pages\\frontend\\brand1', [], true)
+ 5 FCPATH\modules\Admin\Controllers\Vehicleselect.php(55): view('Modules\\Admin\\Views\\pages\\frontend\\brand1', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Vehicleselect->brands('47')
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Vehicleselect))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ERROR - 2022-10-01 09:19:43 --> Unknown column 'f7' in 'where clause'
+CRITICAL - 2022-10-01 09:19:43 --> Unknown column 'f7' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT DISTINCT  *,  GROUP_CONCAT(brand_id) as differentbrands   FROM brand_vehicletype_link  where vehicle_type_id = f7', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT  *,  GROUP_CONCAT(brand_id) as differentbrands   FROM brand_vehicletype_link  where vehicle_type_id = f7')
+ 3 SYSTEMPATH\Database\BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT  *,  GROUP_CONCAT(brand_id) as differentbrands   FROM brand_vehicletype_link  where vehicle_type_id = f7')
+ 4 APPPATH\Models\Brand_Vehicletype_link_Db.php(31): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT  *,  GROUP_CONCAT(brand_id) as differentbrands   FROM brand_vehicletype_link  where vehicle_type_id = f7')
+ 5 FCPATH\modules\Admin\Controllers\Vehicleselect.php(43): App\Models\Brand_Vehicletype_link_Db->get_brand_vehicle('f7')
+ 6 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Vehicleselect->brands('f7')
+ 7 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Vehicleselect))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 09:24:17 --> Array to string conversion
+in APPPATH\Models\Brands_Db.php on line 48.
+ 1 APPPATH\Models\Brands_Db.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Models\\Brands_Db.php', 48)
+ 2 FCPATH\modules\Admin\Controllers\Vehicleselect.php(48): App\Models\Brands_Db->getinarray([...])
+ 3 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Vehicleselect->brands('47')
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Vehicleselect))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 09:24:31 --> Array to string conversion
+in APPPATH\Models\Brands_Db.php on line 48.
+ 1 APPPATH\Models\Brands_Db.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Models\\Brands_Db.php', 48)
+ 2 FCPATH\modules\Admin\Controllers\Vehicleselect.php(48): App\Models\Brands_Db->getinarray([...])
+ 3 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Vehicleselect->brands('47')
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Vehicleselect))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 09:30:38 --> Undefined variable $sql7
+in APPPATH\Models\Brands_Db.php on line 50.
+ 1 APPPATH\Models\Brands_Db.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sql7', 'APPPATH\\Models\\Brands_Db.php', 50)
+ 2 FCPATH\modules\Admin\Controllers\Vehicleselect.php(48): App\Models\Brands_Db->getinarray([...])
+ 3 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Vehicleselect->brands('47')
+ 4 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Vehicleselect))
+ 5 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-10-01 09:37:12 --> Undefined array key "brands"
+in FCPATH\modules\Admin\Controllers\Vehicleselect.php on line 51.
+ 1 FCPATH\modules\Admin\Controllers\Vehicleselect.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "brands"', 'FCPATH\\modules\\Admin\\Controllers\\Vehicleselect.php', 51)
+ 2 SYSTEMPATH\CodeIgniter.php(896): Modules\Admin\Controllers\Vehicleselect->brands('2')
+ 3 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController(Object(Modules\Admin\Controllers\Vehicleselect))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()

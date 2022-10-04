@@ -11,6 +11,8 @@ use App\Models\Admin_Roles_Accesses_Model as Admin_Roles_Accesses_Model;
 use App\Models\Admin_Users_Accesses_Model as Admin_Users_Accesses_Model;
 use App\Models\Settings_Model as Settings_Model;
 use App\Models\Brands_Db as Brands_Db_Model;
+use App\Models\Cars_Db as Cars_Db_Model;
+use App\Models\Brand_Vehicletype_link_Db as Brand_Vehicletype_link_Db_Model;
 
 
 class Brandslist extends BaseController
@@ -27,6 +29,8 @@ class Brandslist extends BaseController
         $this->admin_users_accesses_model = new Admin_Users_Accesses_Model;
         $this->admin_menuitems_model = new Admin_Menuitems_Model;
         $this->brands_db_model = new Brands_Db_Model;
+        $this->cars_db_model = new Cars_Db_Model;
+        $this->brand_vehicletype_link_db_model = new Brand_Vehicletype_link_Db_Model;
     $this->request = \Config\Services::request();
     helper(['form', 'url', 'string']);
     }
@@ -123,6 +127,8 @@ class Brandslist extends BaseController
             $data['title'] = 'Add Brands';
             $data['pade_title'] = 'Admin Dashboard - Add brands';
             $data['roles'] = $this->admin_roles_model->orderBy('role_id', 'DESC')->findAll();
+            $data['vehicle_type'] = $this->cars_db_model->orderBy('id', 'DESC')->findAll();
+            
             // $data['breadcrumb'] = "<a href=User/$this->class_name>Roles</a> &nbsp;&nbsp; > &nbsp;&nbsp; Add Role";
             $data['page_heading'] = 'Add New Brand';
             $data['request'] = $this->request;
@@ -159,19 +165,25 @@ class Brandslist extends BaseController
 
             helper(['form', 'url']);
 
-            $db      = \Config\Database::connect();
-            $builder = $db->table('brands_db');
+          
 
-            $validated = $this->validate([
-                    'file' => [
-                            'uploaded[file]',
-                            'mime_in[file,image/jpg,image/jpeg,image/gif,image/png]',
-                            'max_size[file,4096]',
-                    ],
-            ]);
+     
             if ($this->request->getMethod() == 'post') {
                     extract($this->request->getPost());
             }
+
+           
+            $input = $this->validate(['brand_name' => 'required', 'vehicle_type' => 'required']);
+
+            if (!empty($input))
+            {
+                $validated = $this->validate([
+                        'file' => [
+                                'uploaded[file]',
+                                'mime_in[file,image/jpg,image/jpeg,image/gif,image/png]',
+                                'max_size[file,4096]',
+                        ],
+                ]);
             if (!empty($brand_id_hidd)) {
                     if ($validated) {
                             $avatar = $this->request->getFile('file');
@@ -190,9 +202,10 @@ class Brandslist extends BaseController
 
                             $data = [
 
-                                    'name' =>  $avatar->getClientName(),
-                                    'type'  => $avatar->getClientMimeType(),
-                                    'brand_name' => $brand_name
+                                'avatar' =>  $avatar->getClientName(),
+                                'image_type'  => $avatar->getClientMimeType(),
+                                'make_name' => $brand_name,
+                                'created_at' => date('Y-m-d'),
                             ];
 
 
@@ -200,23 +213,49 @@ class Brandslist extends BaseController
 
                             $update = $this->brands_db_model->where('id', $brand_id_hidd)->set($data)->update();
                             if ($update) {
-                                    $status = true;
-                                    $udata = [];
-                                    $session->setFlashdata('success', 'Data has been updated');
+                                $delete = $this->brand_vehicletype_link_db_model->where('brand_id', $brand_id_hidd)->delete();
+                                if ($delete) {
+                                        foreach($vehicle_type as $row){
+                                                $linkdata = [
+                                                        'brand_id' =>  $brand_id_hidd,
+                                                        'vehicle_type_id' => $row
+                                                ];   
+                                        $this->brand_vehicletype_link_db_model->save($linkdata);
+                                        }
+
+                                        $session->setFlashdata('success', 'Data has been updated');
+                                }else{
+                                        $session->setFlashdata('error', 'Failed to update');    
+                                }
                             } else {
                                     $session->setFlashdata('error', 'Failed to update');
                             }
                     } else {
                             $data = [
-                                    'brand_name' => $brand_name
+                                    'make_name' => $brand_name,
+                                    'created_at' => date('Y-m-d'),
                             ];
+                       
                             $update = $this->brands_db_model->where('id', $brand_id_hidd)->set($data)->update();
 
 
                             if ($update) {
-                                    $status = true;
-                                    $udata = [];
-                                    $session->setFlashdata('success', 'Data has been updated');
+                                $delete = $this->brand_vehicletype_link_db_model->where('brand_id', $brand_id_hidd)->delete();
+                                if ($delete) {
+                                        foreach($vehicle_type as $row){
+                                                $linkdata = [
+                                                        'brand_id' =>  $brand_id_hidd,
+                                                        'vehicle_type_id' => $row,
+                                                        'created_at' => date('Y-m-d'),
+                                                ];   
+                                        $this->brand_vehicletype_link_db_model->save($linkdata);
+                                        }
+
+                                        $session->setFlashdata('success', 'Data has been updated');
+                                }else{
+                                        $session->setFlashdata('error', 'Failed to update');    
+                                }
+                                  
                             } else {
                                     $session->setFlashdata('error', 'Failed to update');
                             }
@@ -247,17 +286,33 @@ class Brandslist extends BaseController
 
                             $data = [
 
-                                    'name' =>  $avatar->getClientName(),
-                                    'type'  => $avatar->getClientMimeType(),
-                                    'brand_name' => $brand_name
+                                    'avatar' =>  $avatar->getClientName(),
+                                    'image_type'  => $avatar->getClientMimeType(),
+                                    'make_name' => $brand_name,
+                                    'created_at' => date('Y-m-d'),
                             ];
 
-                            $save = $builder->insert($data);
+                            $save = $this->brands_db_model->insert_data($data);
+                            if($save){
+
+                                foreach($vehicle_type as $row){
+                                        $linkdata = [
+                                                'brand_id' =>  $save,
+                                                'vehicle_type_id' => $row,
+                                                'created_at' => date('Y-m-d'),
+                                        ];   
+                                $this->brand_vehicletype_link_db_model->save($linkdata);
+                                }
+                            }
                             $session->setFlashdata('success', 'File has been uploaded');
                     } else {
                             $session->setFlashdata('error', 'Please select a valid file');
                     }
             }
+        }else{
+                $session->setFlashdata('error', 'Enter All Fields');
+
+        }
             
             return redirect('addNewBrands');
         
@@ -285,7 +340,12 @@ class Brandslist extends BaseController
             }
             $delete = $this->brands_db_model->where('id', $id)->delete();
             if ($delete) {
-                    $session->setFlashdata('success', 'Brand has been deleted successfully.');
+                $deletetwo = $this->brand_vehicletype_link_db_model->where('brand_id', $id)->delete();
+                if ($deletetwo) {
+                    $session->setFlashdata('success', 'Brand Vehicle Link has been deleted successfully.');
+                }else {
+                        $session->setFlashdata('error', 'Brand Vehicle Link  Deletion failed due to unknown ID.');
+                }
             } else {
                     $session->setFlashdata('error', 'Brand Deletion failed due to unknown ID.');
             }
@@ -306,7 +366,8 @@ class Brandslist extends BaseController
             $data['brands'] = $this->brands_db_model->orderBy('id', 'DESC')->findAll();
             $data['users'] = $this->admin_users_model->orderBy('user_id', 'ASCE')->findAll();
             $data['roles'] = $this->admin_roles_model->orderBy('role_id', 'ASCE')->findAll();
-            return view('Modules\Admin\Views\pages\brands\brandlist', $data);
+           // return view('Modules\Admin\Views\pages\brands\brandlist', $data);
+            return redirect('brandslist');
     }
 
 
@@ -317,7 +378,7 @@ class Brandslist extends BaseController
             if ($id == null) {
                     return  redirect('Admindashboard');
             } else {
-                    $data['userInfo'] = $this->brands_db_model->where("id= '{$id}'")->findAll();
+            
                     $this->global['pageTitle'] = 'Edit Brands';
                     $session = session();
                     $data['user_data'] = [];
@@ -342,15 +403,15 @@ class Brandslist extends BaseController
                     $data['title'] = 'Edit Brands';
                     $data['session'] = $session;
                     $data['query'] = $this->brands_db_model->get_row($id);
-                    $data['cars'] = $this->brands_db_model->orderBy('id', 'DESC')->findAll();
+                    $data['vehicle_type'] = $this->cars_db_model->orderBy('id', 'DESC')->findAll();
                     $data['roles'] = $this->admin_roles_model->orderBy('role_id', 'DESC')->findAll();
                     // $data['breadcrumb'] = "<a href=User/$this->class_name>Roles</a> &nbsp;&nbsp; > &nbsp;&nbsp; Add Role";
                     $data['page_heading'] = 'edit  Brand';
                     $data['request'] = $this->request;
                     $data['menuslinks'] = $this->request->uri->getSegment(1);
-                    //    echo '<pre>';
-                    // print_r($data);
-                    // exit;
+                //        echo '<pre>';
+                //     print_r($data['query']);
+                //     exit;
                     return view('Modules\Admin\Views\pages\brands\addnewbrands', $data);
             }
     }

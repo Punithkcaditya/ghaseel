@@ -125,7 +125,7 @@
 						<div class="page-header mt-0 shadow p-3">
 							<ol class="breadcrumb mb-sm-0">
 								<li class="breadcrumb-item"><a href="#">Tables</a></li>
-								<li class="breadcrumb-item active" aria-current="page">Data Tables</li>
+								<li class="breadcrumb-item active" aria-current="page">Brand List</li>
 							</ol>
 							<div class="btn-group mb-0">
 								<a href="<?php echo base_url(); ?>/addNewBrands">
@@ -137,7 +137,7 @@
 							<div class="col-md-12">
 								<div class="card shadow">
 									<div class="card-header">
-										<h2 class="mb-0">Data Table</h2>
+										<h2 class="mb-0">Brand List</h2>
 									</div>
 									<div class="card-body">
 										<div class="table-responsive">
@@ -174,14 +174,14 @@
 													<?php foreach ($brands as $row) : ?>
 														<tr>
 															<th><?= $i++ ?></th>
-															<td><?= $row['model_name'] ?></td>
+															<td><?= $row['make_name'] ?></td>
 															
 															<td style="text-align: center;"> <img style="max-width: 139px;" id="blah" src="<?=  !empty( $row['avatar']) ?  base_url("uploads/" . $row['avatar']):  base_url("uploads/" . $img) ?>" /> </td>
 															<td>
 
 																<a href="<?= base_url('brand_edit/' . $row['id']) ?>" class="mx-2 text-decoration-none text-primary"><i class="fa fa-edit"></i></a>
 
-																<a href="<?= base_url('brand_delete/' . $row['id']) ?>" class="mx-2 text-decoration-none text-danger" onclick="if(confirm('Are you sure to delete  - <?= $row['model_name'] ?> from list?') !== true) event.preventDefault()"><i class="fa fa-trash"></i></a>
+																<a href="<?= base_url('brand_delete/' . $row['id']) ?>" class="mx-2 text-decoration-none text-danger" onclick="if(confirm('Are you sure to delete  - <?= $row['make_name'] ?> from list?') !== true) event.preventDefault()"><i class="fa fa-trash"></i></a>
 															</td>
 														</tr>
 													<?php endforeach; ?>

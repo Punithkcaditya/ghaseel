@@ -9,8 +9,7 @@ class Brands_Db extends Model {
 
     protected $table            = 'brand';
     protected $primaryKey       = 'id';
-    protected $allowedFields = ['model_name', 'avatar',  'created_at'];
-    public $data;
+    protected $allowedFields = ['make_name', 'avatar', 'image_type',  'created_at'];
     protected $db;
     function __construct() {
         parent::__construct();
@@ -24,14 +23,37 @@ class Brands_Db extends Model {
  
 
     public function get_row($id){
-
-        $sql3 = 'SELECT * FROM '.$this->table .' where id = '.$id.'';
+        $sql4 = 'SELECT b.*, bv.vehicle_type_id,  GROUP_CONCAT(vehicle_type_id) as differentvehicles   FROM '.$this->table .' b LEFT JOIN brand_vehicletype_link bv on b.id = bv.brand_id where b.id = '.$id.'';
+        //$sql3 = 'SELECT * FROM '.$this->table .' where id = '.$id.'';
         // echo '<pre>';
-        // print_r($sql3);
+        // print_r( $sql4);
         // exit;
-        $query = $this->db->query($sql3);
+        $query = $this->db->query($sql4);
         $result = $query->getResultObject();
+    
         return $result;
     }
+
+
+       
+
+    public function insert_data($data = array())
+    {
+        $this->db->table($this->table)->insert($data);
+        return $this->db->insertID();
+    }
+
+    public function getinarray($data = array())
+    {
+        $List = implode(', ', $data);
+        
+                   $sql7 = 'SELECT * FROM '.$this->table .' where id in ('.$List.')'; 
+            
+                   $query = $this->db->query($sql7);
+                   $result = $query->getResultObject();
+                return $result;
+    }
+
+
 
 }

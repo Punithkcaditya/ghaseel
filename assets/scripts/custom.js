@@ -1362,31 +1362,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         //Calling Functions Required After External Menus are Loaded
-        var dataMenuLoad = document.querySelectorAll('[data-menu-load]')
-        dataMenuLoad.forEach(function(e){
-            var menuLoad = e.getAttribute('data-menu-load')
-            fetch(menuLoad)
-            .then(data => data.text())
-            .then(html => e.innerHTML = html)
-            .then(data => {
-                setTimeout(function(){
-                    if(dataMenuLoad[dataMenuLoad.length-1] === e){
-                        menuFunction();
-                        checkDarkMode();
-                        activateMenus();
-                        shareLinks();
-                        highlightColors();
-                        selectHighlight();
-                        card_extender();
-                        backUp();
-                        shapeChanger();
-                        copyright_year();
-                        feather.replace();
-                        featherIcons();
-                    }
-                },500);
-            })
-        })
+        // var dataMenuLoad = document.querySelectorAll('[data-menu-load]')
+        // dataMenuLoad.forEach(function(e){
+        //     var menuLoad = e.getAttribute('data-menu-load')
+        //     fetch(menuLoad)
+        //     .then(data => data.text())
+        //     .then(html => e.innerHTML = html)
+        //     .then(data => {
+        //         setTimeout(function(){
+        //             if(dataMenuLoad[dataMenuLoad.length-1] === e){
+        //                 menuFunction();
+        //                 checkDarkMode();
+        //                 activateMenus();
+        //                 shareLinks();
+        //                 highlightColors();
+        //                 selectHighlight();
+        //                 card_extender();
+        //                 backUp();
+        //                 shapeChanger();
+        //                 copyright_year();
+        //                 feather.replace();
+        //                 featherIcons();
+        //             }
+        //         },500);
+        //     })
+        // })
 
         //Detecting Mobile OS
         let isMobile = {

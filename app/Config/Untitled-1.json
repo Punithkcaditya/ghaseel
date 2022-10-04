@@ -1,6 +1,6 @@
 "Undefined property: App\Controllers\Ajaxupload::$load"
 
-"C:\xampp\htdocs\ghaseel\app\Controllers\Ajaxupload.php"
+"C:\xampp\htdocs\autobilbayt\app\Controllers\Ajaxupload.php"
 
 
 "Undefined property: App\Controllers\Ajaxupload::$load"
@@ -12,11 +12,11 @@
     "type": "ErrorException",
     "code": 500,
     "message": "Undefined property: App\\Controllers\\Ajaxupload::$load",
-    "file": "C:\\xampp\\htdocs\\ghaseel\\app\\Controllers\\Ajaxupload.php",
+    "file": "C:\\xampp\\htdocs\\autobilbayt\\app\\Controllers\\Ajaxupload.php",
     "line": 46,
     "trace": [
         {
-            "file": "C:\\xampp\\htdocs\\ghaseel\\app\\Controllers\\Ajaxupload.php",
+            "file": "C:\\xampp\\htdocs\\autobilbayt\\app\\Controllers\\Ajaxupload.php",
             "line": 46,
             "function": "errorHandler",
             "class": "CodeIgniter\\Debug\\Exceptions",
@@ -24,12 +24,12 @@
             "args": [
                 2,
                 "Undefined property: App\\Controllers\\Ajaxupload::$load",
-                "C:\\xampp\\htdocs\\ghaseel\\app\\Controllers\\Ajaxupload.php",
+                "C:\\xampp\\htdocs\\autobilbayt\\app\\Controllers\\Ajaxupload.php",
                 46
             ]
         },
         {
-            "file": "C:\\xampp\\htdocs\\ghaseel\\system\\CodeIgniter.php",
+            "file": "C:\\xampp\\htdocs\\autobilbayt\\system\\CodeIgniter.php",
             "line": 896,
             "function": "upload",
             "class": "App\\Controllers\\Ajaxupload",
@@ -37,7 +37,7 @@
             "args": []
         },
         {
-            "file": "C:\\xampp\\htdocs\\ghaseel\\system\\CodeIgniter.php",
+            "file": "C:\\xampp\\htdocs\\autobilbayt\\system\\CodeIgniter.php",
             "line": 466,
             "function": "runController",
             "class": "CodeIgniter\\CodeIgniter",
@@ -53,7 +53,7 @@
                         "request": {
                             "uri": {},
                             "config": {
-                                "baseURL": "http://localhost/ghaseel",
+                                "baseURL": "http://localhost/autobilbayt",
                                 "indexPage": "",
                                 "uriProtocol": "PATH_INFO",
                                 "defaultLocale": "en",
@@ -67,7 +67,7 @@
                                 "sessionDriver": "CodeIgniter\\Session\\Handlers\\FileHandler",
                                 "sessionCookieName": "ci_session",
                                 "sessionExpiration": 7200,
-                                "sessionSavePath": "C:\\xampp\\htdocs\\ghaseel\\writable\\session",
+                                "sessionSavePath": "C:\\xampp\\htdocs\\autobilbayt\\writable\\session",
                                 "sessionMatchIP": false,
                                 "sessionTimeToUpdate": 300,
                                 "sessionRegenerateDestroy": false,
@@ -93,7 +93,7 @@
             ]
         },
         {
-            "file": "C:\\xampp\\htdocs\\ghaseel\\system\\CodeIgniter.php",
+            "file": "C:\\xampp\\htdocs\\autobilbayt\\system\\CodeIgniter.php",
             "line": 349,
             "function": "handleRequest",
             "class": "CodeIgniter\\CodeIgniter",
@@ -103,13 +103,13 @@
                 {
                     "handler": "file",
                     "backupHandler": "dummy",
-                    "storePath": "C:\\xampp\\htdocs\\ghaseel\\writable\\cache/",
+                    "storePath": "C:\\xampp\\htdocs\\autobilbayt\\writable\\cache/",
                     "cacheQueryString": false,
                     "prefix": "",
                     "ttl": 60,
                     "reservedCharacters": "{}()/\\@:",
                     "file": {
-                        "storePath": "C:\\xampp\\htdocs\\ghaseel\\writable\\cache/",
+                        "storePath": "C:\\xampp\\htdocs\\autobilbayt\\writable\\cache/",
                         "mode": 416
                     },
                     "memcached": {
@@ -138,7 +138,7 @@
             ]
         },
         {
-            "file": "C:\\xampp\\htdocs\\ghaseel\\index.php",
+            "file": "C:\\xampp\\htdocs\\autobilbayt\\index.php",
             "line": 55,
             "function": "run",
             "class": "CodeIgniter\\CodeIgniter",
@@ -165,11 +165,11 @@
     "type": "ErrorException",
     "code": 500,
     "message": "Undefined property: App\\Controllers\\Ajaxupload::$load",
-    "file": "C:\\xampp\\htdocs\\ghaseel\\app\\Controllers\\Ajaxupload.php",
+    "file": "C:\\xampp\\htdocs\\autobilbayt\\app\\Controllers\\Ajaxupload.php",
     "line": 45,
     "trace": [
         {
-            "file": "C:\\xampp\\htdocs\\ghaseel\\app\\Controllers\\Ajaxupload.php",
+            "file": "C:\\xampp\\htdocs\\autobilbayt\\app\\Controllers\\Ajaxupload.php",
             "line": 45,
             "function": "errorHandler",
             "class": "CodeIgniter\\Debug\\Exceptions",
@@ -177,12 +177,12 @@
             "args": [
                 2,
                 "Undefined property: App\\Controllers\\Ajaxupload::$load",
-                "C:\\xampp\\htdocs\\ghaseel\\app\\Controllers\\Ajaxupload.php",
+                "C:\\xampp\\htdocs\\autobilbayt\\app\\Controllers\\Ajaxupload.php",
                 45
             ]
         },
         {
-            "file": "C:\\xampp\\htdocs\\ghaseel\\system\\CodeIgniter.php",
+            "file": "C:\\xampp\\htdocs\\autobilbayt\\system\\CodeIgniter.php",
             "line": 896,
             "function": "upload",
             "class": "App\\Controllers\\Ajaxupload",
@@ -190,7 +190,7 @@
             "args": []
         },
         {
-            "file": "C:\\xampp\\htdocs\\ghaseel\\system\\CodeIgniter.php",
+            "file": "C:\\xampp\\htdocs\\autobilbayt\\system\\CodeIgniter.php",
             "line": 466,
             "function": "runController",
             "class": "CodeIgniter\\CodeIgniter",
@@ -206,7 +206,7 @@
                         "request": {
                             "uri": {},
                             "config": {
-                                "baseURL": "http://localhost/ghaseel",
+                                "baseURL": "http://localhost/autobilbayt",
                                 "indexPage": "",
                                 "uriProtocol": "PATH_INFO",
                                 "defaultLocale": "en",
@@ -220,7 +220,7 @@
                                 "sessionDriver": "CodeIgniter\\Session\\Handlers\\FileHandler",
                                 "sessionCookieName": "ci_session",
                                 "sessionExpiration": 7200,
-                                "sessionSavePath": "C:\\xampp\\htdocs\\ghaseel\\writable\\session",
+                                "sessionSavePath": "C:\\xampp\\htdocs\\autobilbayt\\writable\\session",
                                 "sessionMatchIP": false,
                                 "sessionTimeToUpdate": 300,
                                 "sessionRegenerateDestroy": false,
@@ -246,7 +246,7 @@
             ]
         },
         {
-            "file": "C:\\xampp\\htdocs\\ghaseel\\system\\CodeIgniter.php",
+            "file": "C:\\xampp\\htdocs\\autobilbayt\\system\\CodeIgniter.php",
             "line": 349,
             "function": "handleRequest",
             "class": "CodeIgniter\\CodeIgniter",
@@ -256,13 +256,13 @@
                 {
                     "handler": "file",
                     "backupHandler": "dummy",
-                    "storePath": "C:\\xampp\\htdocs\\ghaseel\\writable\\cache/",
+                    "storePath": "C:\\xampp\\htdocs\\autobilbayt\\writable\\cache/",
                     "cacheQueryString": false,
                     "prefix": "",
                     "ttl": 60,
                     "reservedCharacters": "{}()/\\@:",
                     "file": {
-                        "storePath": "C:\\xampp\\htdocs\\ghaseel\\writable\\cache/",
+                        "storePath": "C:\\xampp\\htdocs\\autobilbayt\\writable\\cache/",
                         "mode": 416
                     },
                     "memcached": {
@@ -291,7 +291,7 @@
             ]
         },
         {
-            "file": "C:\\xampp\\htdocs\\ghaseel\\index.php",
+            "file": "C:\\xampp\\htdocs\\autobilbayt\\index.php",
             "line": 55,
             "function": "run",
             "class": "CodeIgniter\\CodeIgniter",

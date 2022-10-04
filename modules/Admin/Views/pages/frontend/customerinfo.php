@@ -47,7 +47,7 @@
 
 
 
-            <a href="#" data-menu="menu-main" class="bg-fade-highlight-light shadow-xl preload-img" data-src="<?= base_url(
+            <a href="#" data-menu="menu-main-two" class="bg-fade-highlight-light shadow-xl preload-img" data-src="<?= base_url(
                 "images/avatars/5s.png"
             ) ?>"></a>
             <!-- <a href="#" data-menu="menu-main" class="bg-fade-highlight-light  preload-img" ><i class="fa-solid fa-bars" style="font-size: 26px;"></i></a> -->
@@ -59,7 +59,29 @@
             <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
         </div>
 
+        <!-- model -->
+      
+        <div class="card card-style">
+			<div class="content">
+				<h5 class="font-16 font-600">What effects can Form Wizards have?</h5>
+				<p>
+					Form wizards can use the same effect as our menu system. Meaning, you can have them appear from the left, right, top, bottom or even modals.
+				</p>
+				<h5 class="font-16 font-600">What content can I use in Form Wizards?</h5>
+				<p>
+					Any element from Azures will work inside of a Form Wizard, so you can create rich experiences for your users.
+				</p>
+				<h5 class="font-16 font-600">Can I trigger programatically?</h5>
+				<p>
+					As in the case of the menus, yes, of course! You can even change their size so they're not full screen if you wish. 
+				</p>
+			</div>
+		</div>
+      
 
+
+
+        <!-- model end -->
 
         <!-- MODAL CONTENT SAMPLE STARTS HERE -->
 
@@ -134,64 +156,6 @@
 
 
 
-        <div class="card card-style">
-
-
-        </div>
-
-
-
-
-
-
-
-        <div class="row text-center mb-0">
-
-
-
-
-            <!-- car for trial -->
-            <?php //    echo '<pre>';
-            //    print_r($cars);
-            if (!empty($cars)):
-                $i = 1;
-                foreach ($cars as $main_menus): ?>
-
-            <a href="<?php echo site_url("/brands/".$main_menus['id']); ?>" class="col-6 make_s <?= check($i) ? "ps-2" : "pe-2" ?>" data-makeid="<?php echo $main_menus['id']; ?>" data-makename="<?php echo $main_menus["vehicle_name"]; ?>">
-                <div class="card card-style <?= check($i)
-                            ? "ms-0"
-                            : "me-0" ?> mb-3">
-                    <h1 class="center-text pt-4 mt-2">
-                        <img src="<?= base_url(
-                                    "uploads/" . $main_menus["name"]
-                                ) ?>" alt="<?= $main_menus[
-    "vehicle_name"
-] ?>" />
-                    </h1>
-                    <h4 class="color-theme font-600"  ><?= $main_menus["vehicle_name"] ?></h4>
-
-                    <p class="font-10 opacity-30 mb-1">Tap to Select</p>
-                </div>
-            </a>
-
-
-            <?php $i++;endforeach;
-            endif; ?>
-
-            <!-- car for trial end -->
-
-
-            <?php function check($number)
-            {
-                if ($number % 2 == 0) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } ?>
-
-
-        </div>
 
 
 
@@ -200,26 +164,46 @@
 
 
             <div class="footer card card-style mx-0 mb-0">
-                <a href="#" class="footer-title pt-4">AUTOBILBAYT</a>
-                <p class="text-center font-12 mt-n1 mb-3 mt-3 opacity-70">
-                    Satisfaction is our <span class="color-highlight">goal</span>
-                </p>
-                <!-- <p class="boxed-text-l">
-        Built to match the design trends and give your page the awesome facelift it deserves.
-    </p> -->
-                <div class="text-center mb-3">
-                    <a href="#" class="icon icon-xs rounded-sm shadow-l me-1 bg-facebook"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="icon icon-xs rounded-sm shadow-l me-1 bg-twitter"><i
-                            class="fab fa-twitter"></i></a>
-                    <a href="#" class="icon icon-xs rounded-sm shadow-l me-1 bg-phone"><i class="fa fa-phone"></i></a>
-                    <a href="#" data-menu="menu-share" class="icon icon-xs rounded-sm me-1 shadow-l bg-red-dark"><i
-                            class="fa fa-share-alt"></i></a>
-                    <a href="#" class="back-to-top icon icon-xs rounded-sm shadow-l bg-highlight color-white"><i
-                            class="fa fa-arrow-up"></i></a>
+            <div class="content mb-0">
+                <h3 class="font-600" style="margin-bottom: 29px;">Vehicle Information</h3>
+               
+                
+                <div class="input-style has-borders hnoas-icon input-style-always-active validate-field mb-4">
+                    <input type="name" class="form-control validate-name" id="form1" placeholder="<?= $make_name ?>">
+                    <label for="form1" class="color-highlight font-400 font-13">Vehicle Type</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                  
                 </div>
-                <p class="footer-copyright pb-3 mb-1">Copyright &copy; Enabled <span id="copyright-year">2017</span>.
-                    All Rights Reserved.</p>
+                
+                <div class="input-style has-borders no-icon input-style-always-active validate-field mb-4">
+                    <input type="email" class="form-control validate-email" id="form2" placeholder="<?= $brandname ?>">
+                    <label for="form2" class="color-highlight font-400 font-13">Brand</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                  
+                </div>
+                
+                <div class="input-style has-borders no-icon input-style-always-active validate-field mb-4">
+                    <input type="tel" class="form-control validate-tel" id="form3" placeholder="<?= $modelname ?>">
+                    <label for="form3" class="color-highlight font-400 font-13">Model</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                  
+                </div>
+                
+                <div class="input-style has-borders no-icon input-style-always-active validate-field mb-4">
+                    <input type="text" class="form-control validate-text" id="form44" placeholder="<?= $yearname ?>">
+                    <label for="form44" class="color-highlight font-400 font-13">Year</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                  
+                </div>
+
+                
+
+                                
+            </div>
             </div>
             <div class="footer-card card shape-rounded bg-20" style="height:230px">
                 <div class="card-overlay bg-highlight opacity-90"></div>
@@ -242,7 +226,7 @@
         data-menu-height="510" data-menu-effect="menu-over">
     </div>
 
-    <div id="menu-main" class="menu menu-box-right menu-box-detached rounded-m" data-menu-width="260"
+    <div id="menu-main-two" class="menu menu-box-right menu-box-detached rounded-m" data-menu-width="260"
         data-menu-active="nav-pages" data-menu-effect="menu-over">
 
         <div class="menu-header">
@@ -366,20 +350,20 @@ $(document).ready(function() {
 
 
 
+
+
 // ajax 2
 
-
-
-$('.make_s').click(function() {
-        var make_id = $(this).data("makeid");
-        var make_name = $(this).data("makename");
-
+$('.year').click(function() {
+        var yearid = $(this).data("yearid");
+        var yearname = $(this).data("yearname");
+      
         $.ajax({
-            url: '<?= base_url() ?>/makestore',
+            url: '<?= base_url() ?>/yearstore',
             method: "post",
             data: {
-                make_id: make_id,
-                make_name: make_name
+                yearid: yearid,
+                yearname: yearname
             },
             success: function(data) {
                 //$('#detail_cart').html(data);
@@ -391,6 +375,14 @@ $('.make_s').click(function() {
             }
         });
     });
+
+
+
+
+
+
+
+
 
 
 });

@@ -158,7 +158,7 @@
                                                         <div class="form-group">
 
                                                             <label class="form-label">Brand name</label>
-                                                            <input type="text" class="form-control" name="brand_name" id="brand_name" placeholder="Enter Brand Name" value="<?= !empty($query[0]->brand_name) ? $query[0]->brand_name : '' ?>">
+                                                            <input type="text" class="form-control" name="brand_name" id="brand_name" placeholder="Enter Brand Name" value="<?= !empty($query[0]->make_name) ? $query[0]->make_name : '' ?>">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
@@ -168,9 +168,9 @@
                                                     </div>
                                                     <div class="form-group col-md-12">
                                                
-                                                    <?php if (!empty($query[0]->name)) { ?>
+                                                    <?php if (!empty($query[0]->avatar)) { ?>
                                                         
-                                                            <img   style="width: 139px;" id="blah" src="<?= base_url("uploads/" . $query[0]->name) ?>" />
+                                                            <img   style="width: 139px;" id="blah" src="<?= base_url("uploads/" . $query[0]->avatar) ?>" />
                                                         
                                                     <?php } else {?>
                                                     <div id="blah"></div>
@@ -184,7 +184,35 @@
                                                     </div>
 
 
+                                                    <div class="form-group col-md-12">
 
+                                                    <label for="title">Select Vehicle Type:</label>
+                                                        <select name="vehicle_type[]" id="vehicle_type" class="category form-control" multiple>
+                                                                <option value="">-- Select Vehicle Type --</option>
+
+                                                                <?php 
+                                                                if(!empty($query[0]->differentvehicles)){
+                                                                
+                                                                foreach ($vehicle_type as $row) : ?>
+                                                                <option value="<?php echo $row['id'] ?>"
+                                                                    <?php 
+                                                                    
+                                                                    $myObj = $query[0]->differentvehicles;
+                                                                    $myArray = explode (",", $myObj); 
+                                                                    
+                                                                    echo (!empty($query[0]->differentvehicles) &&  in_array($row['id'], $myArray) ) ? 'selected' : '' ?>>
+                                                                    <?php echo $row['vehicle_name'] ?></option>
+                                                                <?php endforeach;
+                                                                } else{
+                                                                    foreach ($vehicle_type as $row) : ?>
+                                                                        <option value="<?php echo $row['id'] ?>"
+                                                                        <?php  echo (!empty($query[0]->company_service_id) &&  in_array($row['id'], $myArray) ) ? 'selected' : '' ?>>
+                                                                    <?php echo $row['vehicle_name'] ?></option>
+
+                                                                    <?php endforeach; } ?>
+                                                                
+                                                            </select>
+                                                    </div>
 
 
 

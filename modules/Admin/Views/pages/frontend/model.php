@@ -47,7 +47,7 @@
 
 
 
-            <a href="#" data-menu="menu-main" class="bg-fade-highlight-light shadow-xl preload-img" data-src="<?= base_url(
+            <a href="#" data-menu="menu-main-two" class="bg-fade-highlight-light shadow-xl preload-img" data-src="<?= base_url(
                 "images/avatars/5s.png"
             ) ?>"></a>
             <!-- <a href="#" data-menu="menu-main" class="bg-fade-highlight-light  preload-img" ><i class="fa-solid fa-bars" style="font-size: 26px;"></i></a> -->
@@ -59,7 +59,35 @@
             <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
         </div>
 
+        <!-- model -->
+        <div class="card card-style">
+            <div class="content mb-0">
+                <h3 style="text-align: center;">Choose Model</h3>
 
+                <div class="divider mb-0"></div>
+
+                <div class="list-group list-custom-small check-visited">
+                    <?php   if (!empty($models)) : 
+            $i = 1;
+            foreach ($models as $main_menus) : ?>
+                    <a href="<?php echo site_url("/years/".$main_menus->id); ?>" class="model" style="text-align: center;" data-modelid="<?php echo $main_menus->id ?>" data-modelname="<?php echo $main_menus->model_name ?>"><span><?= $main_menus->model_name?></span></a>
+                    <?php
+                                
+                    $i++;
+                    endforeach;
+                    endif; ?>
+
+                    <?php if (count($models) <= 0) : ?>
+                    <p class="font-600 pb-1" style="text-align: center;">No records found</p>
+                    <?php endif ?>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- model end -->
 
         <!-- MODAL CONTENT SAMPLE STARTS HERE -->
 
@@ -134,65 +162,6 @@
 
 
 
-        <div class="card card-style">
-
-
-        </div>
-
-
-
-
-
-
-
-        <div class="row text-center mb-0">
-
-
-
-
-            <!-- car for trial -->
-            <?php //    echo '<pre>';
-            //    print_r($cars);
-            if (!empty($cars)):
-                $i = 1;
-                foreach ($cars as $main_menus): ?>
-
-            <a href="<?php echo site_url("/brands/".$main_menus['id']); ?>" class="col-6 make_s <?= check($i) ? "ps-2" : "pe-2" ?>" data-makeid="<?php echo $main_menus['id']; ?>" data-makename="<?php echo $main_menus["vehicle_name"]; ?>">
-                <div class="card card-style <?= check($i)
-                            ? "ms-0"
-                            : "me-0" ?> mb-3">
-                    <h1 class="center-text pt-4 mt-2">
-                        <img src="<?= base_url(
-                                    "uploads/" . $main_menus["name"]
-                                ) ?>" alt="<?= $main_menus[
-    "vehicle_name"
-] ?>" />
-                    </h1>
-                    <h4 class="color-theme font-600"  ><?= $main_menus["vehicle_name"] ?></h4>
-
-                    <p class="font-10 opacity-30 mb-1">Tap to Select</p>
-                </div>
-            </a>
-
-
-            <?php $i++;endforeach;
-            endif; ?>
-
-            <!-- car for trial end -->
-
-
-            <?php function check($number)
-            {
-                if ($number % 2 == 0) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } ?>
-
-
-        </div>
-
 
 
         <!-- footer and footer card-->
@@ -242,7 +211,7 @@
         data-menu-height="510" data-menu-effect="menu-over">
     </div>
 
-    <div id="menu-main" class="menu menu-box-right menu-box-detached rounded-m" data-menu-width="260"
+    <div id="menu-main-two" class="menu menu-box-right menu-box-detached rounded-m" data-menu-width="260"
         data-menu-active="nav-pages" data-menu-effect="menu-over">
 
         <div class="menu-header">
@@ -362,24 +331,26 @@ $(document).ready(function() {
                 console.log(response);
             }
         });
+    
     });
+
+
+
+
 
 
 
 // ajax 2
 
-
-
-$('.make_s').click(function() {
-        var make_id = $(this).data("makeid");
-        var make_name = $(this).data("makename");
-
+$('.model').click(function() {
+        var modelid = $(this).data("modelid");
+        var modelname = $(this).data("modelname");
         $.ajax({
-            url: '<?= base_url() ?>/makestore',
+            url: '<?= base_url() ?>/modelstore',
             method: "post",
             data: {
-                make_id: make_id,
-                make_name: make_name
+                modelid: modelid,
+                modelname: modelname
             },
             success: function(data) {
                 //$('#detail_cart').html(data);
@@ -391,6 +362,10 @@ $('.make_s').click(function() {
             }
         });
     });
+
+
+
+
 
 
 });

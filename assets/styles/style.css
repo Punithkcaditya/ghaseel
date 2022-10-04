@@ -6592,6 +6592,9 @@ input[type=number] {
 
 .gallery-view-1 a {
   margin-bottom: 5%;
+  margin-top: 7%;
+  text-align: center;
+  padding: 8px;
 }
 
 .gallery-view-1 a:nth-child(3n-1) {

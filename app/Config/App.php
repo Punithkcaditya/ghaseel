@@ -24,8 +24,8 @@ class App extends BaseConfig
      *
      * @var string
      */
-    // public $baseURL = 'http://localhost/ghaseel';
-    public $baseURL = 'http://localhost/ghaseel/admin';
+    // public $baseURL = 'http://localhost/autobilbayt';
+    public $baseURL = 'http://localhost/autobilbayt/admin';
     /**
      * --------------------------------------------------------------------------
      * Index File

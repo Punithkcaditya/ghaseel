@@ -86,9 +86,16 @@ $routes->get('brand_edit/(:segment)', '\Modules\Admin\Controllers\Brandslist::br
 
 
 
-// ghaseel front end
+// autobilbayt front end
 
 
 $routes->get('vehicleselect', '\Modules\Admin\Controllers\Vehicleselect');
-$routes->get('brands', '\Modules\Admin\Controllers\Vehicleselect::brands');
+$routes->get('brands/(:any)', '\Modules\Admin\Controllers\Vehicleselect::brands/$1');
+$routes->get('models/(:any)', '\Modules\Admin\Controllers\Vehicleselect::models/$1');
+$routes->get('years/(:any)', '\Modules\Admin\Controllers\Vehicleselect::years/$1');
+$routes->get('customerinfo/(:any)', '\Modules\Admin\Controllers\Vehicleselect::customerinfo/$1');
 $routes->match(['post'], '/locate', '\Modules\Admin\Controllers\Vehicleselect::locate');
+$routes->match(['post'], '/makestore', '\Modules\Admin\Controllers\Vehicleselect::makestore');
+$routes->match(['post'], '/brandstore', '\Modules\Admin\Controllers\Vehicleselect::brandstore');
+$routes->match(['post'], '/modelstore', '\Modules\Admin\Controllers\Vehicleselect::modelstore');
+$routes->match(['post'], '/yearstore', '\Modules\Admin\Controllers\Vehicleselect::yearstore');
